@@ -1,5 +1,7 @@
-Internal Messages (application of ownCloud)
+Internal Messages 
 =================
+
+<em>application of ownCloud</em> :-)
 
 Light system for sending and receiving messages .
 
