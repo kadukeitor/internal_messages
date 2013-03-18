@@ -1,0 +1,103 @@
+.error_msg{color:red;}
+.error{border-color:red;border-width:2px;}
+
+#loading {
+    display: none;
+    margin: 0;
+    padding:0;
+    vertical-align: middle;
+}
+
+
+#messages_wall {
+    position: relative;
+    top: 37px;
+}
+
+#messages_wall #ubication_label {
+    margin-left: 1em;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #133568;
+    padding-bottom: 1em;
+}
+
+#messages_wall table {
+    margin-left: 16px;
+    margin-right: 16px;
+    position:relative;
+    white-space: pre-line;
+}
+
+#messages_wall table tr.unread {
+    background-color: #EEE;
+}
+
+#messages_wall table td{
+    vertical-align: top;
+    border-bottom: 1px solid #EEE;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#messages_wall #message_photo {
+    margin-left: 1em;
+    float: left;
+    width: 48px;
+    height: 48px;
+    background: transparent url('%webroot%/apps/internal_messages/img/pattern.png');
+    border: 1px solid #D8D8D8;
+    padding: 5px;
+}
+
+#messages_wall #msg_content{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#messages_wall #cell_user{
+    font-weight: bold;
+    font-size: 1em;
+    color: #133568;
+}
+
+#messages_wall #cell_date{
+    text-align: center;
+    font-size: 90%;
+    white-space: pre;
+}
+
+#messages_wall #cell_time{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#messages_wall .message_action img {
+    padding-left: 1em;
+    padding-right: 1em;
+    opacity: 0.5;
+}
+
+#messages_wall .message_action img:hover {
+    opacity: 1;
+}
+
+.sendto.msglist {
+	white-space: normal;
+	margin-left: 1em;
+}
+
+.sendto.msglist li {
+	padding-top: 0.2em;
+    padding-bottom: 0.2em;	
+}
+
+.sendto.msglist li .msgactions  {
+	float: right;
+}
+
+.sendto.msglist li .msgactions img {
+	vertical-align: middle;
+	padding-right: 1em
+}
