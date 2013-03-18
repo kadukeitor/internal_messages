@@ -1,4 +1,4 @@
-Internal Messages
+Internal Messages (application of ownCloud)
 =================
 
 Light system for sending and receiving messages .
@@ -26,4 +26,4 @@ Changelog
 
 ### version 1.3
 
-+ security enhancements.
++ migration to github ...
