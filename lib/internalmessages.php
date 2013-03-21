@@ -58,7 +58,7 @@ class OC_INT_MESSAGES
     public static function sendMessage ( $msgfrom , $msgto ,  $msgcontent , $msgflag='' , $msgdelowner = 0 )
     {
          
-         if ( is_array($msgto[0]) ) {
+         if ( isset($msgto[0]) and is_array($msgto[0]) ) {
              foreach ($msgto[0] as $user) {
                 
                 $query = OCP\DB::prepare('INSERT INTO *PREFIX*internal_messages (message_owner,message_to,message_timestamp,message_content,message_delowner,message_flag) VALUES (?,?,?,?,?,?)');
@@ -67,7 +67,7 @@ class OC_INT_MESSAGES
             }
          }
 
-         if ( is_array($msgto[1]) ) {
+         if ( isset($msgto[1]) and is_array($msgto[1]) ) {
              foreach ($msgto[1] as $group) {
                 $groupUsers = OC_Group::usersInGroup( $group );
                 foreach ($groupUsers as $user) {
