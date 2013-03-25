@@ -8,17 +8,24 @@ class OC_INT_MESSAGES_Hooks
 
         $l = OC_L10N::get('internal_messages');
 
-        $msgto   = array( array( $parameters['shareWith']  ) ) ;
+        $type = $parameters['shareType'] ;
+        
+        if ( $type == OCP\Share::SHARE_TYPE_USER or $type == OCP\Share::SHARE_TYPE_GROUP )  {
 
-        $type    = $parameters['itemType'] == 'file' ? $l->t('the file ') : $l->t('the folder ') ;
+            $msgto   = array( array( $parameters['shareWith']  ) ) ;
+            $type    = $parameters['itemType'] == 'file' ? $l->t('the file ') : $l->t('the folder ') ;
+            $item    = substr($parameters['fileTarget'],1);
 
-        $path    = \OC_FileCache::getPath( $parameters['itemSource'] ,OCP\USER::getUser()  ) ;
+            $msgcontent  = $l->t('I shared with you ') . $item ;
+            OC_INT_MESSAGES::sendMessage( OCP\USER::getUser() , $msgto , $msgcontent , 'ns' , 1 ) ;
 
-        $msgcontent  = $l->t('I shared with you ') . $type . basename($path) ;
+            return true ;
 
-        OC_INT_MESSAGES::sendMessage( OCP\USER::getUser() , $msgto , $msgcontent , 'ns' , 1 ) ;
+        } else {
 
-        return true ;
+            return false ;
+
+        }
 
     }
 
