@@ -17,8 +17,9 @@ foreach ($_['messages'] as $message) {
     if ( $show ) {
 
         $datetime = OCP\Util::formatDate($message['message_timestamp']);
-        $date     = substr($datetime,0, ( strlen($datetime) - 6 ) );
-        $time     = substr($datetime,-6);
+        $datetime = explode(' ', $datetime)
+        $date     = $datetime[0];
+        $time     = $datetime[1];
 
         if ( ($message['message_read'] == 0) and $in ) { echo "<tr class=\"unread\">" ; } else { echo "<tr>" ; }
 
