@@ -26,4 +26,6 @@
     "Delete" => "Eliminar" ,
     "Quit" => "Quitar" ,
 
+    "Read in" => "Leído el" ,
+
 );

@@ -169,7 +169,7 @@ $(document).ready(function() {
     });
 
     $('.message_delete').live('click', function() {
-        OC.InternalMessages.DelMessage();
+        OC.InternalMessages.DelMessage($(this).attr('msg_id'));
         $(this).parent().parent().remove();
     });
 

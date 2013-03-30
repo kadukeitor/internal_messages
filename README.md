@@ -17,6 +17,7 @@ Features
 + Search text in messages.
 + Reply messages.
 + Notify sharing.
++ Notify reading date.
 
 Requirements
 ------------
@@ -25,6 +26,11 @@ Requirements
 
 Changelog
 ---------
+
+### version 1.4
+
++ Improvements in the code.
++ Notify reading date.
 
 ### version 1.3
 

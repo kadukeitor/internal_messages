@@ -16,10 +16,9 @@ foreach ($_['messages'] as $message) {
 
     if ( $show ) {
 
-        $datetime = OCP\Util::formatDate($message['message_timestamp']);
-        $datetime = explode(' ', $datetime)
-        $date     = $datetime[0];
-        $time     = $datetime[1];
+        $date     = OCP\Util::formatDate($message['message_timestamp'],true);
+        $time     = str_replace($date, '' , OCP\Util::formatDate($message['message_timestamp']));
+        $read     = $message['message_read'] == 1 ? "" : $l->t('Read in') . " " . OCP\Util::formatDate($message['message_read']);
 
         if ( ($message['message_read'] == 0) and $in ) { echo "<tr class=\"unread\">" ; } else { echo "<tr>" ; }
 
@@ -28,6 +27,7 @@ foreach ($_['messages'] as $message) {
         echo "<td id=msg_content width=100%>";
         echo "<p id=cell_user>".$message['message_owner']." > " . $message['message_to'] . "</p>" ;
         echo "<p message_id=".$message['message_id']." name=message_content>".$message['message_content']."</p>" ;
+        if ( ($message['message_read'] != 0) and $in == false ) { echo "<p id=cell_read>$read</p>" ; }
         echo "</td>";
 
         echo "<td>" ;

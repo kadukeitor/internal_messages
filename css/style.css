@@ -72,6 +72,9 @@
     font-weight: bold;
 }
 
+#messages_wall #cell_read{
+    color: #999;
+}
 
 #messages_wall .message_action img {
     padding-left: 1em;

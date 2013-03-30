@@ -97,8 +97,8 @@ class OC_INT_MESSAGES
 
     public static function readMessages( $user )
     {
-        $query  = OCP\DB::prepare('UPDATE *PREFIX*internal_messages SET message_read = 1 WHERE message_read= 0 AND message_to = ?');
-        $result = $query->execute(Array( $user ));
+        $query  = OCP\DB::prepare('UPDATE *PREFIX*internal_messages SET message_read = ? WHERE message_read= 0 AND message_to = ?');
+        $result = $query->execute(Array( time() , $user ));
 
         return 1;
 
