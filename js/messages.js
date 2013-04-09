@@ -177,6 +177,9 @@ $(document).ready(function() {
         OC.InternalMessages.ReplyMessage($(this).attr('msg_owner'));
     });
 
+    $('#bbcode_help').live('click', function() {
+        window.open(OC.filePath('internal_messages', 'templates', 'bbcode.php'), 'help', 'width=300,height=400,left=100,top=200');
+    });   
 
     $('a.message_action').tipsy({
         gravity : 's',

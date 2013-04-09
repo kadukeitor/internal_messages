@@ -27,5 +27,6 @@
     "Quit" => "Quitar" ,
 
     "Read in" => "Leído el" ,
-
+    "You can format your text with BBCode" => "Usted puede formatear su texto en formato BBCode" ,
+    "Help" => "Ayuda" ,
 );

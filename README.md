@@ -18,6 +18,7 @@ Features
 + Reply messages.
 + Notify sharing.
 + Notify reading date.
++ Formating text with BBCode.
 
 Requirements
 ------------
@@ -26,6 +27,10 @@ Requirements
 
 Changelog
 ---------
+
+### version 1.5
+
++ Formating text with BBCode.
 
 ### version 1.4
 

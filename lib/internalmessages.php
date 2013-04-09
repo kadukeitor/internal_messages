@@ -21,6 +21,8 @@
  *
  */
 
+require_once( "apps/internal_messages/lib/jbbcode/Parser.php" );
+
 class OC_INT_MESSAGES
 {
     const flag_group_part = 'gp';
@@ -114,9 +116,20 @@ class OC_INT_MESSAGES
                                          AND ( message_delto = 0 OR message_delowner = 0 )
                                          AND message_content LIKE ?
                                     ORDER by message_timestamp DESC');
-        $result = $query->execute( array( $user , $user , $pattern ));
+        $result   = $query->execute( array( $user , $user , $pattern ));
+        $messages = $result->fetchAll() ;
 
-        return $result->fetchAll() ;
+        // bbcode
+        $parser = new JBBCode\Parser();
+        $parser->loadDefaultCodes();
+        $messagesHTML = array();
+        foreach ($messages as $message) {
+            $parser->parse($message['message_content']);
+            $message['message_content'] = $parser->getAsHtml();
+            $messagesHTML[] = $message ;
+        }
+
+        return $messagesHTML;
 
     }
 

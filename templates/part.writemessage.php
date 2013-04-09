@@ -22,6 +22,11 @@
             </td>
         </tr>
         <tr>
+            <td>
+                <?php echo $l->t("You can format your text with BBCode");?> : <a href="#" id="bbcode_help"><?php echo $l->t("Help");?></a>
+            </td>
+        </tr>
+        <tr>
             <td style="padding: 0.5em; text-align: right;"><a id="send_message" class="button" href="#"><?php echo $l->t('Send Message')
             ?></a></td>
         </tr>
