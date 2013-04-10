@@ -29,8 +29,10 @@ $l = OC_L10N::get('internal_messages');
 
 if ( isset($_POST['pattern']) ) {
 
+	$pattern = OCP\UTIL::sanitizeHTML($_POST['pattern']);
+    
     $tmpl = new OCP\Template( 'internal_messages' , 'part.messages' );
-    $tmpl->assign( 'messages' , OC_INT_MESSAGES::getMessages( OCP\USER::getUser() , $_POST['pattern'] ) , false );
+    $tmpl->assign( 'messages' , OC_INT_MESSAGES::getMessages( OCP\USER::getUser() , $pattern ) , false );
     $page = $tmpl->fetchPage();
 
     OCP\JSON::success( array('data' => array( 'page' => $page ) ));
