@@ -29,4 +29,5 @@
     "Read in" => "Lido" ,
     "You can format your text with BBCode" => "Formatar com BBCode" ,
     "Help" => "Ajuda" ,
+
 );
