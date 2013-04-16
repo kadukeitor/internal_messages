@@ -280,6 +280,12 @@ class Parser {
         $this->addBBCode("img", "<img src=\"{param}\" alt=\"a user uploaded image\" />");
         $this->addBBCode("img", "<img src=\"{param}\" alt=\"{option}\" />", true);
         $this->addBBCode("color", "<span style=\"color: {option}\">{param}</span>", true);
+        
+        // my extension
+        $this->addBBCode("li", "<li>{param}</li>");
+        $this->addBBCode("strike", '<strike>{param}</strike>');
+        $this->addBBCode("indent", '<pre>{param}</pre>');
+        $this->addBBCode("quote", '<strong>Quote:</strong><div style="margin:0px 10px;padding:5px;background-color:#F7F7F7;border:1px dotted #CCCCCC;width:80%;"><em>{param}</em></div>');
     }
     
     /**
