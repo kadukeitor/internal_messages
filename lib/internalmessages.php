@@ -65,7 +65,8 @@ class OC_INT_MESSAGES
                 
                 $query = OCP\DB::prepare('INSERT INTO *PREFIX*internal_messages (message_owner,message_to,message_timestamp,message_content,message_delowner,message_flag) VALUES (?,?,?,?,?,?)');
                 $query->execute( Array( $msgfrom,$user,time(), $msgcontent, $msgdelowner , $msgflag ));
-                
+      			$emitHookParams = array('fromUid' => $msgfrom,'toUid' => $user,'msgContent' => $msgcontent, 'msgFlag' => $msgflag);
+	 		    \OCP\Util::emitHook('OC_INT_MESSAGES', 'post_sendMessage', $emitHookParams); 
             }
          }
 
